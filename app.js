@@ -4,6 +4,10 @@ import bodyParser from "body-parser";
 const app = express();
 app.use(bodyParser.json()); // Parse JSON bodies
 
+app.get("/", (req, res) => {
+  res.send("Running...");
+});
+
 app.post("/", (req, res) => {
   const cookies = req.body.cookies;
   const cRVT = req.body.cRVT;
